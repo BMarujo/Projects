@@ -1,0 +1,135 @@
+.cart-page{
+    margin: 80px auto;
+
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total table{
+    border-top: 3px solid rgb(0, 153, 153);
+    width: 100%;
+    max-width: 410px;
+    margin-right:10%;
+}
+
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+.shop{
+    width: 80%;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: rgb(0, 153, 153);
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a{
+    color: rgb(0, 153, 153);
+    font-size: 12px;
+}
+
+td img{
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.modal2{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid rgb(0, 153, 153);
+    border-radius: 5px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal2.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.modal-header{
+    padding: 10px 15px;
+    border-bottom: 1px solid rgb(0, 153, 153);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 153, 153);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .close-btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    color: rgb(153, 0, 0);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}

@@ -1,0 +1,205 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="css/register.css">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <title>Register</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="../js/cookie.js"></script>
+      <script src="js/register.js"></script>
+      
+      <script>
+        if (getCookie("token")) {
+          const encryptedToken = window.encryptData(getCookie("token"));
+          // check if token is valid
+          $.post({
+            url:"/users/valid", 
+            data:{ token: encryptedToken}
+          })
+          .done(function( data ) {
+              const info = JSON.parse(data)
+              if (info.tokenIsValid === "VALID") {
+                // valid session
+                window.location.pathname = '/collections'
+              }
+          })
+          .fail(function() {
+              errorBox.innerHTML = "Ocorreu um erro ao tentar contactar o servidor!";
+          });
+        }
+      </script>
+    </head>
+
+    <body>
+      <div class="main">
+        <p class="sign" align="center">Register</p>
+
+
+        <input id="username" class="un " type="text" align="center" placeholder="Username" name="username">
+        
+        <div class="container">
+          <form action="#">
+            <div class="field">
+                <input class= "input2" id="password" onkeyup="trigger(this.value); checkBoxes(this.value);" type="password" placeholder="Type password">
+                <span class="showBtn">SHOW</span>
+            </div>
+            <div class="indicator">
+                <span class="weak"></span>
+                <span class="medium"></span>
+                <span class="strong"></span>
+            </div>
+            <div class="text"></div>
+            <div class="validation">
+              <ul>
+                <li id="lower">Pelo menos um caracter minúsculo</li>
+                <li id="upper">Pelo menos um caracter maiúscula</li>
+                <li id="number">Pelo menos um número</li>
+                <li id="special">Pelo menos um caracter especial ["$", "&", "!"]</li>
+                <li id="len">Deve ter entre 12 e 128 caracteres</li>
+              </ul>
+            </div>
+          </form>
+        </div>
+
+        <input style="margin-left: 10%;" type="checkbox" id="minhaCheckbox" />
+        <label style="font-size: 10px; padding-right: 10%; text-align: center;" for="minhaCheckbox">Li e concordo com os termos da Política de Privacidade e confirmo que tenho mais de 18 anos de idade.</label>
+        <br><br>
+        
+        <button onclick="tryRegister()" class="submit" align="center" type="submit">Register</button>
+        <p class="forgot" align="center"><a href="/">Login</a></p>
+        <div id="errorBox" style="color:#8c55aa; transform: translateY(100%);" align="center"></div>
+      </div>
+
+
+      <script>
+        const indicator = document.querySelector(".indicator");
+        const input = document.querySelector(".input2");
+        const weak = document.querySelector(".weak");
+        const medium = document.querySelector(".medium");
+        const strong = document.querySelector(".strong");
+        const text = document.querySelector(".text");
+        const showBtn = document.querySelector(".showBtn");
+
+
+        let regExpWeak = /[a-z]/;
+        let regExpMedium = /\d+/;
+        let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+        let lowercases = document.getElementById("lower");
+        let uppercases = document.getElementById("upper");
+        let digits = document.getElementById("number");
+        let specialChar = document.getElementById("special");
+        let len = document.getElementById("len");
+        
+        function checkBoxes(data){
+          const lower = new RegExp('(?=.*[a-z])');
+          const upper = new RegExp('(?=.*[A-Z])');
+          const number = new RegExp('(?=.*[0-9])');
+          const special = new RegExp('(?=.*[!$&])');
+          const length = new RegExp('(?=.{12,128})');
+
+          if (lower.test(data)) {
+            lowercases.classList.remove("invalid");
+            lowercases.classList.add("valid");
+          } else {
+            lowercases.classList.remove("valid");
+            lowercases.classList.add("invalid");
+          }
+
+          if (upper.test(data)) {
+            uppercases.classList.remove("invalid");
+            uppercases.classList.add("valid");
+          } else {
+            uppercases.classList.remove("valid");
+            uppercases.classList.add("invalid");
+          }
+
+          if (number.test(data)) {
+            digits.classList.remove("invalid");
+            digits.classList.add("valid");
+          } else {
+            digits.classList.remove("valid");
+            digits.classList.add("invalid");
+          }
+
+          if (special.test(data)) {
+            specialChar.classList.remove("invalid");
+            specialChar.classList.add("valid");
+          } else {
+            specialChar.classList.remove("valid");
+            specialChar.classList.add("invalid");
+          }
+
+          if (length.test(data)) {
+            len.classList.remove("invalid");
+            len.classList.add("valid");
+          } else {
+            len.classList.remove("valid");
+            len.classList.add("invalid");
+          }
+        }
+
+        function trigger(data){
+          if(data.value != ""){
+            const lower = new RegExp('(?=.*[a-z])');
+            const upper = new RegExp('(?=.*[A-Z])');
+            const number = new RegExp('(?=.*[0-9])');
+            const special = new RegExp('(?=.*[!$&])');
+
+            indicator.style.display = "block";
+            indicator.style.display = "flex";
+
+           
+            if(data.length >= 12 && data.length <= 16 && lower.test(data) && upper.test(data) && number.test(data) && special.test(data))no=2;
+            else if(data.length >= 17 && lower.test(data) && upper.test(data) && number.test(data) && special.test(data))no=3;
+            else no=1;
+
+            if(no==1){
+              weak.classList.add("active");
+              text.style.display = "block";
+              text.textContent = "Your password is too weak";
+              text.classList.add("weak");
+            }
+            if(no==2){
+              medium.classList.add("active");
+              text.textContent = "Your password is medium";
+              text.classList.add("medium");
+            }else{
+              medium.classList.remove("active");
+              text.classList.remove("medium");
+            }
+            if(no==3){
+              weak.classList.add("active");
+              medium.classList.add("active");
+              strong.classList.add("active");
+              text.textContent = "Your password is strong";
+              text.classList.add("strong");
+            }else{
+              strong.classList.remove("active");
+              text.classList.remove("strong");
+            }
+            showBtn.style.display = "block";
+            showBtn.onclick = function(){
+              if(input.type == "password"){
+                input.type = "text";
+                showBtn.textContent = "HIDE";
+                showBtn.style.color = "#23ad5c";
+              }else{
+                input.type = "password";
+                showBtn.textContent = "SHOW";
+                showBtn.style.color = "#000";
+              }
+            }
+          }else{
+            indicator.style.display = "none";
+            text.style.display = "none";
+            showBtn.style.display = "none";
+          }
+        }
+
+
+      </script>
+    </body>
+
+</html>

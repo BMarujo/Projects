@@ -1,0 +1,64 @@
+.cart-page{
+    margin: 80px auto;
+
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total table{
+    border-top: 3px solid rgb(0, 153, 153);
+    width: 100%;
+    max-width: 410px;
+    margin-right:10%;
+}
+
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+.shop{
+    width: 80%;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: rgb(0, 153, 153);
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a{
+    color: rgb(0, 153, 153);
+    font-size: 12px;
+}
+
+td img{
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+}

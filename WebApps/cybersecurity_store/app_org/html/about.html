@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/collections-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/logOut.js"></script>
+    <script src="../js/tokenManager.js"></script><script> checkToken(); </script>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/about">
+                <i class="fa-solid fa-address-card"></i>
+                About
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" href="/collections">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-5" href="/cart/">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-3 active" aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-4" id="PROFILE" href="/profile">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link nav-link-2" onclick="logOut()">Log Out</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="../img/html/ua.jpg"></div>
+
+    <div class="container-fluid tm-mt-60">
+        <div class="row mb-4">
+            <h2 class="col-12 tm-text-primary">
+                Sobre o nosso projeto
+            </h2>
+        </div>
+        <div class="row tm-mb-74 tm-row-1640">            
+            <div class="col-lg-5 col-md-6 col-12 mb-3">
+                <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=avenida%20joao%20jacinto%20de%20magalhaes&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net/%22%3Efmovies"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net/%22%3Eembedded" maps></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+            </div>
+            <div class="col-lg-7 col-md-6 col-12">
+                <div class="tm-about-img-text">
+                        <p class="mb-4">
+                    Este site foi criado no ambito da disciplina de SIO da <a href="https://www.ua.pt/" target="_blank">universidade de Aveiro</a>, pelos alunos do curso <a href="https://www.ua.pt/pt/curso/486" target="_blank">Engenharia de Computadores e Informática</a>:</p>
+                        <ul>
+                            <li>Daniel Emídio - 108986</li>
+                            <li>Henrique Coelho - 108342</li>
+                            <li>Bernardo Marujo - 107322</li>
+                            <li>Carlos Ferreira - 108822</li>
+                            <li>Gabriel Costa - 109050</li>
+                        </ul>
+                        <p>O repositorio utilizado neste projeto esta desponivel no <a href="https://github.com/detiuaveiro/1st-project-group_24" target="_blank">GitHub</a></p>
+                        <p>Template utilizado como base: <a href="https://templatemo.com" target="_blank">templatemo</a></p>
+                        <p>Bibliotecas utilizadas: Bootstrap</p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+    <script src="../js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>

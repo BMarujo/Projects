@@ -1,0 +1,1 @@
+ficheiro .txt para a pasta ir para o GH. Não aparecem pastas vazias no GH.

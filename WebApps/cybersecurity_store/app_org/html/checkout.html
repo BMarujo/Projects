@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Colecao</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/collections-style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/logOut.js"></script>
+    <script src="../js/tokenManager.js"></script> <script> checkToken(); </script>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/checkout">
+               <i class="fa-solid fa-credit-card"></i>
+                Checkout
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" href="/collections">Produtos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-5" href="/cart/">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-3" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-3" id="PROFILE" href="/profile">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link nav-link-2" onclick="logOut()">Log Out</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="../img/html/ua.jpg"></div>
+
+    <div class="container">
+         
+      <header>
+         Checkout</header>
+      <div class="progress-bar2">
+         <div class="step">
+            <p>
+               Envio
+            </p>
+            <div class="bullet">
+               <span>1</span>
+            </div>
+            <div class="check fas fa-check"></div>
+         </div>
+         <div class="step">
+            <p>
+               Faturamento
+            </p>
+            <div class="bullet">
+               <span>2</span>
+            </div>
+            <div class="check fas fa-check"></div>
+         </div>
+         <div class="step">
+            <p>
+               Recibo
+            </p>
+            <div class="bullet">
+               <span>3</span>
+            </div>
+            <div class="check fas fa-check"></div>
+         </div>
+      </div>
+      
+      <div class="form-outer">
+         <form action="">
+            <div class="page slide-page">
+               <div class="field btns">
+                  <a href="/cart" style="width: 350px;">
+                     <button style="width: 100%; height: 23px;font-size: 16px;margin-bottom: 20px; pointer-events: none;">&lt Voltar ao carrinho</button>
+                  </a>
+               </div>
+               <div class="title">
+                  Envio :
+               </div>
+               <div class="field">
+                  <div class="label">
+                     Primeiro nome *
+                  </div>
+                  <input id="name" type="text">
+               </div>
+               <div class="field">
+                  <div class="label">
+                     Sobrenome *
+                  </div>
+                  <input id="lname" type="text">
+               </div>
+               <div class="field">
+                <div class="label">
+                   Morada *
+                </div>
+                <input id="address" type="text">
+                </div>
+               <div class="field">
+                <div class="label">
+                   Código postal *
+                </div>
+                <input id="pcode" type="text">
+                </div>
+               <div class="field">
+                <div class="label">
+                   Vila ou Cidade *
+                </div>
+                <input id="ToCi" type="text">
+                </div>
+               <div class="field">
+                <div class="label">
+                   Pais/Região *
+                </div>
+                <input id="CoRe" type="text">
+                </div>
+                <div class="field">
+                <div class="label">
+                   Email *
+                </div>
+                <input id="email" type="text">
+                </div>
+               <div class="field">
+                <div class="label">
+                   Número telefónico *
+                </div>
+                <input id="phone" type="text">
+                </div>
+               <div class="field">
+                  <button class="firstNext next">Próximo</button>
+               </div>
+            </div>
+            <div class="page">
+               <div class="field btns">
+                  <a href="/cart" style="width: 350px;">
+                     <button style="width: 100%; height: 23px;font-size: 16px;margin-bottom: 20px; pointer-events: none;">&lt Voltar ao carrinho</button>
+                  </a>
+               </div>
+               <div class="title">
+                  Faturamento :
+               </div>
+               
+                     <div class="pt-4 pl-2 pr-2 pb-2">
+                        <!-- Credit card form tabs -->
+                        <ul role="tablist" class="nav nav-pills rounded nav-fill mb-3">
+                           <li class="nav-item" style="width:25%"> <a  data-toggle="pill" href="#credit-card" class="nav-link active " > <i class="fas fa-credit-card mr-2"></i> Cartão de crédito </a> </li>
+                           <li class="nav-item" style="width:25%"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                        </ul>
+                  </div> <!-- End -->
+
+                  <!-- Credit card form content -->
+                  <div class="tab-content">
+                     <!-- credit card info-->
+                     <div id="credit-card" class="tab-pane fade show active pt-3">
+                        <div class="field">
+                           <div class="label">
+                                 Dono do cartão
+                           </div>
+                           <input id="COwner" type="text">
+                        </div>
+                        <div class="field">
+                           <div class="label">
+                                 Número do cartão
+                           </div>
+                           <input id="CNumber" type="text">
+                        </div>
+                        <div class="row">
+                           <div class="col-sm-8">
+                                 <div class="form-group"> <div class="label">
+                                    Data de expiração
+                                 </div>
+                                    <div class="field"> <input id="month" type="number" placeholder="MM" name="" > <input id="year" type="number" placeholder="YY" name="" > </div>
+                                 </div>
+                           </div>
+                           <div class="col-sm-4">
+                                    <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                    <div class="label">
+                                       CVV <i class="fa fa-question-circle d-inline"></i>
+                                    </div>
+                                    </label><div class="field"> <input id="CVV" type="text" > </div></div>
+                           </div>
+                        </div>
+               </div> <!-- End -->
+               <!-- Paypal info -->
+                  <div id="paypal" class="tab-pane fade pt-3">
+                        <h6 class="pb-2">Seleciona o teu tipo de conta PayPal</h6>
+                        <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Doméstico </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                        <p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                        <p class="text-muted" style="color:#fff!important"> Nota: Após clicar no botão, será direcionado a um portal seguro para pagamento. Após concluir o processo de pagamento, será redirecionado de volta ao site para visualizar os detalhes do seu pedido. </p>
+                  </div> <!-- End -->
+               </div>
+               <div class="field btns">
+                  <button class="prev-1 prev">Anterior</button>
+                  <button class="pay next">PAGAR!</button>
+               </div>
+            </div>
+            <div class="page">
+               <div class="field btns">
+                  <a href="/cart" style="width: 350px;">
+                     <button style="width: 100%; height: 23px;font-size: 16px;margin-bottom: 20px; pointer-events: none;">&lt Voltar ao carrinho</button>
+                  </a>
+               </div>
+               <div class="title">
+                  Recibo :
+               </div>
+               <div id="RECEIPT_CONTAINER">
+                  <!--Products bought by the User will be showed here-->
+                  
+               </div>
+               
+   <script src="../js/checkout.js"></script>
+    
+    <script src="../js/collectionsPlugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>

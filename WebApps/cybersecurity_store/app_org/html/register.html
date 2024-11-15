@@ -1,0 +1,39 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="css/register.css">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      <title>Register</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="../js/cookie.js"></script>
+      <script src="js/register.js"></script>
+      <script>
+        if (getCookie("token")) {
+          // check if token is valid
+          $.post("/users/valid", { token: getCookie("token")})
+          .done(function( data ) {
+              const info = JSON.parse(data)
+              if (info.tokenIsValid === "VALID") {
+                // valid session
+                window.location.pathname = '/collections'
+              }
+          })
+          .fail(function() {
+              errorBox.innerHTML = "Ocurreu um erro ao tentar contactar o servidor!";
+          });
+        }
+      </script>
+    </head>
+
+    <body>
+      <div class="main">
+        <p class="sign" align="center">Register</p>
+        <input id="username" class="un " type="text" align="center" placeholder="Username" name="username">
+        <input id="password" class="un " type="password" align="center" placeholder="Password" name="password">
+        <button onclick="tryRegister()" class="submit" align="center" type="submit">Register</button>
+        <p class="forgot" align="center"><a href="/">Login</a></p>
+        <div id="errorBox" style="color:#8c55aa; transform: translateY(100%);" align="center"></div>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/collections-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/logOut.js"></script>
+    <script src="../js/catalog.js"></script>
+    <script src="../js/tokenManager.js"></script> <script> checkToken(); </script>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/collections">
+                <i class="fa-brands fa-product-hunt"></i>
+                Produtos
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1 active" aria-current="page" href="/collections">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-5" href="/cart/">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-3" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-4" id="PROFILE" href="/profile">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link nav-link-2" onclick="logOut()">Log Out</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="../img/html/ua.jpg"></div>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search..." onkeydown="checkEnter(event)">
+        <button onclick="search()">Procurar</button>
+    </div>
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div id="admindif" class="row mb-4">
+            <h2 class="col-6 tm-text-primary">
+                Catálogo
+            </h2>
+        </div>
+        <div id="PRODUCTS_CONTAINER" class="row tm-mb-90 tm-gallery">
+            <!-- Aqui vao aparecer todos os produtos -->
+        </div> <!-- row -->
+    </div> <!-- container-fluid, tm-container-content -->
+    <script src="../js/collectionsPlugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>

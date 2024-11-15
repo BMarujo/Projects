@@ -1,0 +1,53 @@
+CREATE TABLE Users(
+   Id INTEGER PRIMARY KEY AUTOINCREMENT,
+   user TEXT,
+   password TEXT,
+   token TEXT,
+   csrfToken TEXT,
+   name TEXT,
+   avatar TEXT
+);
+
+CREATE TABLE Products(
+   Id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ImgPath TEXT,
+   comments TEXT,
+   description TEXT,
+   quantity INTEGER,
+   name TEXT,
+   price FLOAT
+);
+
+CREATE TABLE UserProducts (
+   Id INTEGER PRIMARY KEY AUTOINCREMENT,
+   UserId INTEGER,
+   ProductId INTEGER,
+   Quantity INTEGER,
+   FOREIGN KEY (UserId) REFERENCES Users (Id),
+   FOREIGN KEY (ProductId) REFERENCES Products (Id)
+);
+
+CREATE TABLE OrderHistory(
+   IdUsr INTEGER,
+   Quantity INTEGER,
+   ProductId INTEGER
+);
+
+INSERT INTO Users(user, password) VALUES ('admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-03.jpg', '', '111 bugs in the code, 111 bugs. Take one down, patch it all up, Windows did not shut down correctly.', 100, 'Hoodie Bugs Azul', 25.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-04.png', '', 'Chegar atrasado às aulas, nunca mais!', 2, 'DETI Mobile', 234.5);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-05.jpg', '', 'Meu código, minhas regras.', 255, 'Boné My Rules Preto', 14.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-06.jpg', '', 'Hahaha... não percebi.', 257, 'Boné Postel Code Branco', 14.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-01.jpg', '', 'Nós também não irmão.', 76, 'Tshirt My Code Works', 25.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-02.jpg', '', '3h com sorte...', 83, 'Tshirt while(alive)', 25.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-07.jpg', '', 'Cuidado, esse modo é viciante!', 122, 'Boné Energy Saving Branco', 14.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-08.jpg', '', '100% fibras sintéticas, 0% reembolsavél.', 99, 'Boné 10% Programming Preto', 14.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-09.jpg', '', 'Percebes XD porque se tiveres de explicar código é poque provavelmente não o estruturaste bem o suficiente para as outras pessoas perceberem por elas mesmas tal com uma piada.', 101, 'Tshirt Code is Like Humor', 34.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-10.jpg', '', 'Sabes quem é a Candice?', 104, 'Tshirt and I know things', 20.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-11.png', '', 'Compra um, recebe outro de graça para oferecer a um amigo.', 508, 'Sticker you_good_buddy', 0.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-13.jpg', '', 'Para aqules que gostam de pensar em código primeira coisa na manhã.', 69, 'Caneca Branca', 12.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-14.jpg', '', 'Saudádes do trauma que foi ACII? We got you coverd!', 32, 'DETPIC32', 131.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-15.jpg', '', 'Requisito número um para passar a SIO.', 32, 'Hoodie Hackerman', 35.0);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-16.jpg', '', 'A única forma de usar roupa de programador sem ser julgado.', 3, 'Boxers Under_Code', 9.99);
+INSERT INTO Products(ImgPath, comments, description, quantity, name, price) VALUES ('../img/html/img-17.png', '', 'Ímanes de frigorífico, um pior do que o outro.', 89, 'Ímanes Deti', 11.99);
