@@ -1,0 +1,19 @@
+Nov 23 19:32:46.846 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 23 19:32:46.846 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57861.
+Nov 23 19:32:47.339 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 23 19:32:47.339 HYPERVISOR: exec_cmd: hypervisor working_dir C:\LECI\RC1\ProjetoRC1\project-files\dynamips 
+Nov 23 19:32:47.339 GENERAL: working_dir=C:\LECI\RC1\ProjetoRC1\project-files\dynamips
+Nov 23 19:32:47.339 HYPERVISOR: exec_cmd: ethsw create MarketingS 
+Nov 23 19:32:50.966 HYPERVISOR: exec_cmd: nio create_udp udp-883d26a9-7ed1-49ad-ab3d-ae29489ca91e 10005 127.0.0.1 10004 
+Nov 23 19:32:50.966 HYPERVISOR: exec_cmd: ethsw add_nio MarketingS udp-883d26a9-7ed1-49ad-ab3d-ae29489ca91e 
+Nov 23 19:32:50.998 HYPERVISOR: exec_cmd: ethsw set_access_port MarketingS udp-883d26a9-7ed1-49ad-ab3d-ae29489ca91e 1 
+Nov 23 19:32:51.076 HYPERVISOR: exec_cmd: nio create_udp udp-ebefbb66-b66e-465a-9e7f-1f9600f20fa2 10007 127.0.0.1 10006 
+Nov 23 19:32:51.076 HYPERVISOR: exec_cmd: ethsw add_nio MarketingS udp-ebefbb66-b66e-465a-9e7f-1f9600f20fa2 
+Nov 23 19:32:51.092 HYPERVISOR: exec_cmd: ethsw set_access_port MarketingS udp-ebefbb66-b66e-465a-9e7f-1f9600f20fa2 1 
+Nov 23 19:32:51.973 HYPERVISOR: exec_cmd: nio create_udp udp-d3898996-060f-49f9-a94b-53088b259990 10024 127.0.0.1 10025 
+Nov 23 19:32:51.989 HYPERVISOR: exec_cmd: ethsw add_nio MarketingS udp-d3898996-060f-49f9-a94b-53088b259990 
+Nov 23 19:32:52.004 HYPERVISOR: exec_cmd: ethsw set_access_port MarketingS udp-d3898996-060f-49f9-a94b-53088b259990 1 
+Nov 24 01:43:22.183 HYPERVISOR: exec_cmd: ethsw delete MarketingS 
+Nov 24 01:43:22.271 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 24 01:43:22.503 HYPERVISOR: Stopped.
+Nov 24 01:43:22.503 GENERAL: reset done.

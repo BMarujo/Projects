@@ -1,0 +1,19 @@
+Nov 23 19:32:47.387 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 23 19:32:47.387 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57865.
+Nov 23 19:32:47.880 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 23 19:32:47.880 HYPERVISOR: exec_cmd: hypervisor working_dir C:\LECI\RC1\ProjetoRC1\project-files\dynamips 
+Nov 23 19:32:47.880 GENERAL: working_dir=C:\LECI\RC1\ProjetoRC1\project-files\dynamips
+Nov 23 19:32:47.880 HYPERVISOR: exec_cmd: ethsw create DMZS 
+Nov 23 19:32:51.313 HYPERVISOR: exec_cmd: nio create_udp udp-0012df73-8021-4938-aedb-b5bebfdad8a2 10013 127.0.0.1 10012 
+Nov 23 19:32:51.313 HYPERVISOR: exec_cmd: ethsw add_nio DMZS udp-0012df73-8021-4938-aedb-b5bebfdad8a2 
+Nov 23 19:32:51.329 HYPERVISOR: exec_cmd: ethsw set_access_port DMZS udp-0012df73-8021-4938-aedb-b5bebfdad8a2 1 
+Nov 23 19:32:51.392 HYPERVISOR: exec_cmd: nio create_udp udp-4ce6ba40-7614-4174-93f8-15fd4ad58fdf 10015 127.0.0.1 10014 
+Nov 23 19:32:51.392 HYPERVISOR: exec_cmd: ethsw add_nio DMZS udp-4ce6ba40-7614-4174-93f8-15fd4ad58fdf 
+Nov 23 19:32:51.424 HYPERVISOR: exec_cmd: ethsw set_access_port DMZS udp-4ce6ba40-7614-4174-93f8-15fd4ad58fdf 1 
+Nov 23 19:32:52.177 HYPERVISOR: exec_cmd: nio create_udp udp-5682ea31-1fd8-4dbb-8176-64fa81d029d1 10032 127.0.0.1 10033 
+Nov 23 19:32:52.177 HYPERVISOR: exec_cmd: ethsw add_nio DMZS udp-5682ea31-1fd8-4dbb-8176-64fa81d029d1 
+Nov 23 19:32:52.193 HYPERVISOR: exec_cmd: ethsw set_access_port DMZS udp-5682ea31-1fd8-4dbb-8176-64fa81d029d1 1 
+Nov 24 01:43:22.180 HYPERVISOR: exec_cmd: ethsw delete DMZS 
+Nov 24 01:43:22.272 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 24 01:43:22.503 HYPERVISOR: Stopped.
+Nov 24 01:43:22.503 GENERAL: reset done.

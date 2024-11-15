@@ -1,0 +1,18 @@
+$TTL	 604800
+$ORIGIN aicompany.pt.
+@	IN	SOA	ns1.aicompany.pt. adm.aicompany.pt. (
+			2 ; Serial
+			604800 ; Refresh
+			86400 ; Retry
+			2419200 ; Expire
+			604800) ; Negative Cache TTL
+	IN	NS	ns1.aicompany.pt.
+ns1	IN	A	120.100.20.2
+@	IN	A	120.100.20.2
+www	IN	A	120.100.20.2
+design	IN	A	198.135.127.2
+marketing	IN	A	120.100.20.2
+admin	IN	A	120.100.20.2
+dmz	IN	A	120.100.20.2
+datacenter	IN	A	120.100.20.2
+hostPC		IN	A	120.100.20.3

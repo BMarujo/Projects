@@ -1,0 +1,1 @@
+Os ficheiros html estão inseridos nos servidores nas pastas adequadas com o nome index.html.

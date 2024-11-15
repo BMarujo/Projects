@@ -1,0 +1,3 @@
+set pcname Admin2
+dhcp
+ip auto
