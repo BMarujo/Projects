@@ -1,0 +1,87 @@
+# Reading pref.tcl
+# do ProjetoFinal_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/LECI/LSD/ControloRadiador-LSD/Debouncer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:12:50 on May 31,2023
+# vcom -reportprogress 300 -93 -work work C:/LECI/LSD/ControloRadiador-LSD/Debouncer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Debouncer
+# -- Compiling architecture Behavioral of Debouncer
+# End time: 07:12:50 on May 31,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/LECI/LSD/ControloRadiador-LSD/temperature_key.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:12:50 on May 31,2023
+# vcom -reportprogress 300 -93 -work work C:/LECI/LSD/ControloRadiador-LSD/temperature_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity temperature_key
+# -- Compiling architecture Behavioral of temperature_key
+# -- Loading entity Debouncer
+# End time: 07:12:50 on May 31,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/LECI/LSD/ControloRadiador-LSD/temperature_keyTB.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 07:13:07 on May 31,2023
+# vcom -reportprogress 300 -work work C:/LECI/LSD/ControloRadiador-LSD/temperature_keyTB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity temperature_keyTB
+# -- Compiling architecture Stimulus of temperature_keyTB
+# -- Loading entity temperature_key
+# End time: 07:13:08 on May 31,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.temperature_keytb(stimulus)
+# vsim work.temperature_keytb(stimulus) 
+# Start time: 07:13:17 on May 31,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.temperature_keytb(stimulus)
+# Loading work.temperature_key(behavioral)
+# Loading work.debouncer(behavioral)
+# ** Warning: (vsim-8684) No drivers exist on out port /temperature_keytb/uut/secondlight(7), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /temperature_keytb/s_secondlight(7).
+# ** Warning: (vsim-8684) No drivers exist on out port /temperature_keytb/uut/light(16 downto 15), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /temperature_keytb/s_light(16 downto 15).
+# ** Warning: (vsim-8684) No drivers exist on out port /temperature_keytb/uut/light(13 downto 12), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /temperature_keytb/s_light(13 downto 12).
+# ** Warning: (vsim-8684) No drivers exist on out port /temperature_keytb/uut/light(10 downto 1), and its initial value is not used.
+# Therefore, simulation behavior may occur that is not in compliance with
+# the VHDL standard as the initial values come from the base signal /temperature_keytb/s_light(10 downto 1).
+add wave -position end  sim:/temperature_keytb/s_state
+add wave -position end  sim:/temperature_keytb/s_clock
+add wave -position end  sim:/temperature_keytb/s_button
+add wave -position end  sim:/temperature_keytb/s_Tsol
+add wave -position end  sim:/temperature_keytb/s_Tlua
+add wave -position end  sim:/temperature_keytb/s_Tgel
+add wave -position end  sim:/temperature_keytb/s_dezenas
+add wave -position end  sim:/temperature_keytb/s_unidades
+add wave -position end  sim:/temperature_keytb/s_decimas
+add wave -position end  sim:/temperature_keytb/s_secondlight
+add wave -position end  sim:/temperature_keytb/s_secondlight
+run
+# End time: 07:16:44 on May 31,2023, Elapsed time: 0:03:27
+# Errors: 0, Warnings: 4

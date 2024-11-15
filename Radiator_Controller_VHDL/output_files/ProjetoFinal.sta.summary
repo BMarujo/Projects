@@ -1,0 +1,125 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -21.268
+TNS   : -1804.166
+
+Type  : Slow 1200mV 85C Model Setup 'ClkDividerN:clockDivider|clkOut'
+Slack : -10.396
+TNS   : -28.190
+
+Type  : Slow 1200mV 85C Model Setup 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -9.212
+TNS   : -27.408
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ClkDividerN:clockDivider|clkOut'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : 1.203
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -423.195
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -1.291
+TNS   : -42.483
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ClkDividerN:clockDivider|clkOut'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SetTemperature:setTempFSM|current_state.normal'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -19.088
+TNS   : -1619.038
+
+Type  : Slow 1200mV 0C Model Setup 'ClkDividerN:clockDivider|clkOut'
+Slack : -9.422
+TNS   : -24.702
+
+Type  : Slow 1200mV 0C Model Setup 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -8.546
+TNS   : -25.500
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.282
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ClkDividerN:clockDivider|clkOut'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : 1.186
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -423.195
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ClkDividerN:clockDivider|clkOut'
+Slack : -1.285
+TNS   : -15.420
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -1.111
+TNS   : -35.866
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SetTemperature:setTempFSM|current_state.normal'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -9.852
+TNS   : -732.842
+
+Type  : Fast 1200mV 0C Model Setup 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -4.893
+TNS   : -14.292
+
+Type  : Fast 1200mV 0C Model Setup 'ClkDividerN:clockDivider|clkOut'
+Slack : -4.850
+TNS   : -8.582
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.002
+TNS   : -0.002
+
+Type  : Fast 1200mV 0C Model Hold 'ClkDividerN:clockDivider|clkOut'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : 0.670
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -350.613
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ClkDividerN:clockDivider|clkOut'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DigitalClock:digitalClock|Counter4Bits:hourTen|s_value[0]'
+Slack : -0.448
+TNS   : -8.978
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SetTemperature:setTempFSM|current_state.normal'
+Slack : 0.282
+TNS   : 0.000
+
+------------------------------------------------------------
