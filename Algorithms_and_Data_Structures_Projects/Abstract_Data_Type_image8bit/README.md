@@ -1,4 +1,4 @@
-# Trabalho1 AED 2023-2024
+# Projeto 1: Imagens 8-bit
 
 Este é o código-fonte para o primeiro projeto de AED 2023-2024.
 
@@ -29,4 +29,7 @@ Execute:
 
 - `make` - Compila e gera os programas de teste.
 - `make clean` - Limpa ficheiros objeto e executáveis.
+
+Pode ver o relatório detalhado clicando no seguinte link:
+📄 [View the Report](Report/O_TAD_image8bit/O_TAD_image8bit.pdf)
 

@@ -39,3 +39,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
+
+You can view the detailed report by clicking the link:
+📄 [View the Report](analysis/report.md)
+
