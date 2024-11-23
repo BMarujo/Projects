@@ -30,6 +30,7 @@ Execute:
 - `make` - Compila e gera os programas de teste.
 - `make clean` - Limpa ficheiros objeto e executáveis.
 
+## Relatório
 Pode ver o relatório detalhado clicando no seguinte link:
 📄 [View the Report](Report/O_TAD_image8bit/O_TAD_image8bit.pdf)
 
