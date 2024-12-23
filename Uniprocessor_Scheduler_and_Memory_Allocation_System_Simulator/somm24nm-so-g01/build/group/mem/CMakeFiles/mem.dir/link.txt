@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/marujo/somm24nm-so-g01/lib/libmem.a CMakeFiles/mem.dir/mem_init.cpp.o CMakeFiles/mem.dir/mem_term.cpp.o CMakeFiles/mem.dir/mem_print.cpp.o CMakeFiles/mem.dir/mem_alloc.cpp.o CMakeFiles/mem.dir/mem_add.cpp.o CMakeFiles/mem.dir/mem_retrieve.cpp.o CMakeFiles/mem.dir/mem_free.cpp.o
-/usr/bin/ranlib /home/marujo/somm24nm-so-g01/lib/libmem.a
