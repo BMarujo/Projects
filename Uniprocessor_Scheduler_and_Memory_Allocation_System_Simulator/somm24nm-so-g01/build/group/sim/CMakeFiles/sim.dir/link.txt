@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/marujo/somm24nm-so-g01/lib/libsim.a CMakeFiles/sim.dir/sim_init.cpp.o CMakeFiles/sim.dir/sim_term.cpp.o CMakeFiles/sim.dir/sim_print.cpp.o CMakeFiles/sim.dir/sim_config.cpp.o CMakeFiles/sim.dir/sim_step.cpp.o CMakeFiles/sim.dir/sim_run.cpp.o
+/usr/bin/ranlib /home/marujo/somm24nm-so-g01/lib/libsim.a
