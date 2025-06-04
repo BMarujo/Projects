@@ -32,12 +32,14 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // LED angle thresholds
-#define LEFT_RED_THRESHOLD 30.0      // 0-30°
-#define LEFT_YELLOW_THRESHOLD 60.0   // 30-60°
-#define CENTER_THRESHOLD_LOW 85.0    // 85-95° (center zone)
-#define CENTER_THRESHOLD_HIGH 95.0
-#define RIGHT_YELLOW_THRESHOLD 120.0 // 120-150°
-#define RIGHT_RED_THRESHOLD 150.0    // 150-180°
+#define LEFT_RED_THRESHOLD 21.0      // 0-20°
+#define LEFT_YELLOW_THRESHOLD 80.0   // 21-79°
+
+#define CENTER_THRESHOLD_LOW 80.0    // 80-100° (center zone)
+#define CENTER_THRESHOLD_HIGH 100.0
+
+#define RIGHT_YELLOW_THRESHOLD 100.0 // 101-159°
+#define RIGHT_RED_THRESHOLD 159.0    // 160-180°
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,6 +55,7 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 volatile uint32_t pulse_width1 = 0, pulse_width2 = 0;
 volatile uint8_t new_data1 = 0, new_data2 = 0;
+volatile float angle_deg;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -132,7 +135,7 @@ void update_leds(float angle_deg) {
     // Far left - Left Red
     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
   }
-  else if (angle_deg < LEFT_YELLOW_THRESHOLD) {
+  else if (angle_deg < LEFT_YELLOW_THRESHOLD && angle_deg >= LEFT_RED_THRESHOLD) {
     // Between center and far left - Left Yellow
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
   }
@@ -140,7 +143,7 @@ void update_leds(float angle_deg) {
     // Far right - Right Red
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
   }
-  else if (angle_deg > RIGHT_YELLOW_THRESHOLD) {
+  else if (angle_deg > RIGHT_YELLOW_THRESHOLD && angle_deg <= RIGHT_RED_THRESHOLD) {
     // Between center and far right - Right Yellow
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
   }
@@ -198,8 +201,8 @@ int main(void) {
     float dist2 = (pulse_width2 > 0) ? (pulse_width2 * 0.034 / 2) : 400.0;
 
     // Object tracking logic
-    float angle_deg = 90.0; // Default center
-    const float SENSOR_DISTANCE = 10.0; // Sensor spacing (cm)
+    angle_deg = 90.0; // Default center
+    const float SENSOR_DISTANCE = 9.0; // Sensor spacing (cm)
 
     if (dist1 < 400.0 || dist2 < 400.0) {
       float diff = dist2 - dist1;
@@ -214,10 +217,6 @@ int main(void) {
 
     // Update LED indicators
     update_leds(angle_deg);
-
-    // Debug output
-    printf("S1: %luµs (%.1fcm) | S2: %luµs (%.1fcm) | Angle: %.1f°\r\n",
-           pulse_width1, dist1, pulse_width2, dist2, angle_deg);
 
     HAL_Delay(50); // Cycle delay
   }

@@ -60,8 +60,8 @@ all: main-build
 main-build: 2D_Object_Tracking_System.elf secondary-outputs
 
 # Tool invocations
-2D_Object_Tracking_System.elf 2D_Object_Tracking_System.map: $(OBJS) $(USER_OBJS) /home/marujo/STM32CubeIDE/workspace_1.18.1/2D_Object_Tracking_System/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "2D_Object_Tracking_System.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/marujo/STM32CubeIDE/workspace_1.18.1/2D_Object_Tracking_System/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2D_Object_Tracking_System.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+2D_Object_Tracking_System.elf 2D_Object_Tracking_System.map: $(OBJS) $(USER_OBJS) /home/marujo/2D_Object_Tracking_System/2D_Object_Tracking_System/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "2D_Object_Tracking_System.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/marujo/2D_Object_Tracking_System/2D_Object_Tracking_System/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2D_Object_Tracking_System.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
