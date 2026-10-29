@@ -1,0 +1,45 @@
+!
+! Zebra configuration saved from vty
+!   2026/01/08 03:03:37
+!
+frr version 8.4_git
+frr defaults traditional
+!
+hostname S2
+!
+!
+!
+!
+!
+interface eth0
+ ip address 10.0.0.66/30
+exit
+!
+!
+interface eth1
+ ip address 10.0.2.1/30
+exit
+!
+!
+interface eth2
+ ip address 10.0.2.5/30
+exit
+!
+!
+interface eth3
+ ip address 10.0.2.9/30
+exit
+!
+!
+interface lo
+ ip address 10.0.0.102/32
+exit
+!
+!
+!
+no ipv6 forwarding
+!
+!
+!
+!
+!

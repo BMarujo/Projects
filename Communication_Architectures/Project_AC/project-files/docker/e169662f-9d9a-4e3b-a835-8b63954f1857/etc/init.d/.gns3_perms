@@ -1,0 +1,4 @@
+777:0:0:/etc/init.d/adv_network
+644:0:0:/etc/init.d/.gns3_perms
+777:0:0:/etc/init.d/frr
+755:0:0:/etc/init.d/

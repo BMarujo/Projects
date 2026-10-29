@@ -1,0 +1,16 @@
+600:100:101:/etc/frr/bgpd.conf.sav
+600:100:101:/etc/frr/zebra.conf
+644:0:0:/etc/frr/.gns3_perms
+600:100:101:/etc/frr/staticd.conf.sav
+600:100:101:/etc/frr/ospfd-1.conf.sav
+600:100:101:/etc/frr/zebra.conf.sav
+600:100:101:/etc/frr/ospfd-1.conf
+600:100:101:/etc/frr/ospfd-3.conf.sav
+600:100:101:/etc/frr/staticd.conf
+600:100:101:/etc/frr/ospfd-2.conf.sav
+600:100:101:/etc/frr/bgpd.conf
+644:100:101:/etc/frr/daemons
+600:100:101:/etc/frr/ospfd-1,2,3.conf
+600:100:101:/etc/frr/ospfd-2.conf
+600:100:101:/etc/frr/ospfd-3.conf
+755:100:101:/etc/frr/

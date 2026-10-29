@@ -1,0 +1,45 @@
+!
+! Zebra configuration saved from vty
+!   2026/01/08 03:03:41
+!
+frr version 8.4_git
+frr defaults traditional
+!
+hostname S1
+!
+!
+!
+!
+!
+interface eth0
+ ip ospf 1 area 0
+exit
+!
+!
+interface eth1
+ ip ospf 1 area 0
+exit
+!
+!
+interface eth2
+ ip ospf 1 area 0
+exit
+!
+!
+interface eth3
+ ip ospf 1 area 0
+exit
+!
+!
+interface lo
+ ip ospf 1 area 0
+exit
+!
+!
+router ospf 1
+
+exit
+!
+!
+!
+!

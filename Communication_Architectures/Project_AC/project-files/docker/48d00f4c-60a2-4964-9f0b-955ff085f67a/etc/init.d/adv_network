@@ -1,0 +1,73 @@
+MY_VTEP_IP="10.0.0.15"
+MY_VTEP_IP_L2="10.0.0.17"
+
+ip link set eth0 up
+ip addr add 10.0.1.6/30 dev eth0
+ip route add default via 10.0.1.5
+
+ip link add vrf_L1 type vrf table 1000
+ip link add vrf_L2 type vrf table 2000
+ip link set vrf_L1 up
+ip link set vrf_L2 up
+
+ip link add br10 type bridge
+ip link set br10 master vrf_L1
+ip addr add 10.10.0.1/22 dev br10
+ip link set br10 up
+
+ip link add br20 type bridge
+ip link set br20 master vrf_L1
+ip addr add 10.20.0.1/22 dev br20
+ip link set br20 up
+
+ip link add br30 type bridge
+ip link set br30 master vrf_L1
+ip addr add 10.30.0.1/22 dev br30
+ip link set br30 up
+
+ip link add br40 type bridge
+ip link set br40 master vrf_L2
+ip addr add 10.40.0.1/22 dev br40
+ip link set br40 up
+
+ip link add vni10 type vxlan local $MY_VTEP_IP dstport 4789 id 10 nolearning
+ip link set vni10 master br10
+ip link set vni10 type bridge_slave neigh_suppress on learning off
+ip link set vni10 up
+
+ip link add vni20 type vxlan local $MY_VTEP_IP dstport 4789 id 20 nolearning
+ip link set vni20 master br20
+ip link set vni20 type bridge_slave neigh_suppress on learning off
+ip link set vni20 up
+
+ip link add vni30 type vxlan local $MY_VTEP_IP dstport 4789 id 30 nolearning
+ip link set vni30 master br30
+ip link set vni30 type bridge_slave neigh_suppress on learning off
+ip link set vni30 up
+
+ip link add vni40 type vxlan local $MY_VTEP_IP_L2 dstport 4789 id 40 nolearning
+ip link set vni40 master br40
+ip link set vni40 type bridge_slave neigh_suppress on learning off
+ip link set vni40 up
+
+CABLES="eth1" 
+
+for IFACE in $CABLES; do
+    ip link set $IFACE up
+
+    ip link add link $IFACE name $IFACE.10 type vlan id 10
+    ip link set $IFACE.10 master br10
+    ip link set $IFACE.10 up
+
+    ip link add link $IFACE name $IFACE.20 type vlan id 20
+    ip link set $IFACE.20 master br20
+    ip link set $IFACE.20 up
+
+    ip link add link $IFACE name $IFACE.30 type vlan id 30
+    ip link set $IFACE.30 master br30
+    ip link set $IFACE.30 up
+
+    ip link add link $IFACE name $IFACE.40 type vlan id 40
+    ip link set $IFACE.40 master br40
+    ip link set $IFACE.40 up
+done
